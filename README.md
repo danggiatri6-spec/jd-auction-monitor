@@ -16,3 +16,9 @@ This first version does not automatically sign in to JD, scrape auction pages, m
 Open this repository in Android Studio, sync Gradle, and run the app configuration. GitHub Actions builds a debug APK on pushes and pull requests; download it from the workflow run's Artifacts section.
 
 Android 13+ requires notification permission. Exact alarms may require special access; otherwise Android may delay inexact reminders.
+
+
+## JD sign-in and browsing (v1.1)
+The app now includes an embedded Android WebView that opens the official JD Paipai/auction domain. Sign in on JD's own page, navigate to 夺宝岛, search there using the site's own search controls, open a specific item detail page, then tap "添加当前商品到监控". The app reads the visible page title and URL; review or enter the auction end time before saving.
+
+JD may change its site, block embedded browsers, require CAPTCHA, or restrict login. If sign-in is rejected in WebView, open the same official page in the JD app or system browser; the app does not bypass JD security checks or store account credentials. End-time extraction is best-effort, so verify it manually before relying on reminders.
